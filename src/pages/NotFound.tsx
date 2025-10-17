@@ -5,10 +5,15 @@ const NotFound = () => {
   const location = useLocation();
 
   useEffect(() => {
-    console.error(
-      "404 Error: User attempted to access non-existent route:",
-      location.pathname
-    );
+    // For HashRouter, prefer hash route for 404 diagnostics to avoid false positives on base paths
+    const hashPath = typeof window !== 'undefined' ? window.location.hash.replace(/^#/, '') : '';
+    const effectivePath = hashPath || location.pathname;
+    if (effectivePath && effectivePath !== '/') {
+      console.error(
+        "404 Error: User attempted to access non-existent route:",
+        effectivePath
+      );
+    }
   }, [location.pathname]);
 
   return (
