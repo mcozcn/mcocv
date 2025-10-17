@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
+import heroImage from '@/pictures/hero.png';
 import { ArrowDown, Zap, Target, Globe } from 'lucide-react';
 
 interface HeroSectionProps {
@@ -226,7 +227,7 @@ const HeroSection = ({ language, setLanguage }: HeroSectionProps) => {
                 {/* Image */}
                 <div className="relative w-80 h-80 md:w-96 md:h-96">
                   <img 
-                    src="/lovable-uploads/1e6e526d-3c76-4238-b838-097368cf673b.png"
+                    src={heroImage}
                     alt="Mücahit Özcan"
                     className="w-full h-full object-cover rounded-full relative z-10 transform transition-all duration-700 group-hover:scale-105"
                   />
