@@ -24,7 +24,7 @@ const ProjectsSection = ({ language }: ProjectsSectionProps) => {
           result: 'Randevu ve müşteri memnuniyetinde %40 artış',
           cta: 'Uygulamayı İncele',
           image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=400&h=300&fit=crop',
-          category: 'Mobile App',
+          category: 'App',
           link: 'https://beautiq.lovable.app'
         },
         {
@@ -71,7 +71,7 @@ const ProjectsSection = ({ language }: ProjectsSectionProps) => {
           result: '40% increase in appointments and customer satisfaction',
           cta: 'View Application',
           image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=400&h=300&fit=crop',
-          category: 'Mobile App',
+          category: 'App',
           link: 'https://beautiq.lovable.app'
         },
         {

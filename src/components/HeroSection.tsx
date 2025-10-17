@@ -131,7 +131,7 @@ const HeroSection = ({ language, setLanguage }: HeroSectionProps) => {
           {/* Left Content */}
           <div className="lg:w-1/2 text-center lg:text-left">
             {/* Main Title with Spherical Blur Effect */}
-            <div className="relative mb-4 h-24 overflow-hidden">
+            <div className="relative mb-6 h-28 md:h-32 overflow-hidden">
               <h1 className={`text-5xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-white to-purple-400 tracking-tighter leading-none font-display transition-all duration-1000 ${
                 showTitle 
                   ? 'opacity-100 blur-0 transform translate-y-0' 
@@ -148,7 +148,7 @@ const HeroSection = ({ language, setLanguage }: HeroSectionProps) => {
             </div>
 
             {/* Subtitle with Glitch Effect */}
-            <div className="relative mb-8 h-20 overflow-hidden">
+            <div className="relative mb-10 h-24 md:h-28 overflow-hidden">
               {showSubtitle && (
                 <>
                   <h2 
