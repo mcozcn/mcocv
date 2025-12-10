@@ -334,7 +334,7 @@ export default function NeuralNetworkHero({
   return (
     <section ref={sectionRef} className="relative h-screen w-screen overflow-hidden bg-transparent">
 
-      <div className="relative mx-auto flex max-w-7xl flex-col items-start gap-4 sm:gap-6 px-4 sm:px-6 pb-16 sm:pb-24 pt-20 sm:pt-36 md:gap-8 md:pt-44 md:px-10 lg:px-16">
+      <div className="relative mx-auto flex max-w-7xl flex-col items-start gap-4 sm:gap-6 px-4 sm:px-6 pb-16 sm:pb-24 pt-6 sm:pt-8 md:gap-8 md:pt-44 md:px-10 lg:px-16">
         <h1 ref={headerRef} className="max-w-2xl text-left text-3xl sm:text-4xl md:text-5xl font-extralight leading-[1.05] tracking-tight text-white lg:text-6xl xl:text-7xl">
           {title}
         </h1>

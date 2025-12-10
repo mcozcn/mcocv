@@ -68,9 +68,9 @@ const HeroSection = ({ language, setLanguage }: HeroSectionProps) => {
         microDetails={microDetails}
       />
 
-      {/* Profile Image - Mobile: Below Content, Desktop: Right Side Overlay */}
+      {/* Profile Image - Mobile: Above Content, Desktop: Right Side Overlay */}
       {/* Mobile Layout */}
-      <div className="lg:hidden relative z-10 mt-6">
+      <div className="lg:hidden relative z-10 mb-6">
         <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto flex flex-col items-center">
             <div className="relative group">
@@ -85,13 +85,6 @@ const HeroSection = ({ language, setLanguage }: HeroSectionProps) => {
                   
                   {/* Minimal glow effect */}
                   <div className="absolute inset-0 rounded-full bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"></div>
-                </div>
-              </div>
-
-              {/* Name Below Image - Minimal Style */}
-              <div className="relative group mt-3 text-center">
-                <div className="text-lg sm:text-xl font-light tracking-tight text-white/90">
-                  MÜCAHİT ÖZCAN
                 </div>
               </div>
             </div>
