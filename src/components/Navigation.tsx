@@ -68,11 +68,11 @@ const Navigation = ({ language, setLanguage }: NavigationProps) => {
         ? 'bg-black/80 backdrop-blur-2xl border-b border-white/10' 
         : 'bg-transparent'
     }`}>
-      <div className="container mx-auto px-4 py-6">
+      <div className="container mx-auto px-4 py-4 md:py-6">
         <div className="flex items-center justify-between">
           {/* Logo with Fixed Text */}
           <div className="relative group">
-            <div className="text-2xl font-extralight text-white tracking-tight">
+            <div className="text-lg sm:text-xl md:text-2xl font-extralight text-white tracking-tight">
               MÜCAHİT ÖZCAN
             </div>
             <div className="absolute -bottom-1 left-0 w-0 h-px bg-white/40 group-hover:w-full transition-all duration-300"></div>

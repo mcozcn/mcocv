@@ -71,13 +71,13 @@ const HeroSection = ({ language, setLanguage }: HeroSectionProps) => {
       {/* Profile Image - Right Side Overlay (Minimal Style) */}
       <div className="absolute inset-0 pointer-events-none z-10">
         <div className="container mx-auto px-4 h-full">
-          <div className="max-w-7xl mx-auto h-full flex items-start pt-36 sm:pt-44 md:px-10 lg:px-16">
-            <div className="w-full flex justify-end">
-              <div className="lg:w-1/2 flex justify-center lg:justify-end pointer-events-auto">
+          <div className="max-w-7xl mx-auto h-full flex items-start pt-20 sm:pt-36 md:pt-44 md:px-10 lg:px-16">
+            <div className="w-full flex justify-center sm:justify-end">
+              <div className="w-full sm:w-auto lg:w-1/2 flex justify-center lg:justify-end pointer-events-auto">
                 <div className="relative group">
                   {/* Profile Image Container */}
                   <div className="relative">
-                    <div className="relative w-80 h-80 md:w-96 md:h-96 lg:w-[500px] lg:h-[500px]">
+                    <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 xl:w-[500px] xl:h-[500px]">
                       <img 
                         src={heroImage}
                         alt="Mücahit Özcan"
@@ -90,8 +90,8 @@ const HeroSection = ({ language, setLanguage }: HeroSectionProps) => {
                   </div>
 
                   {/* Name Below Image - Minimal Style */}
-                  <div className="relative group mt-6 text-center">
-                    <div className="text-3xl md:text-4xl font-light tracking-tight text-white/90">
+                  <div className="relative group mt-4 sm:mt-6 text-center">
+                    <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light tracking-tight text-white/90">
                       MÜCAHİT ÖZCAN
                     </div>
                   </div>

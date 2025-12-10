@@ -334,16 +334,16 @@ export default function NeuralNetworkHero({
   return (
     <section ref={sectionRef} className="relative h-screen w-screen overflow-hidden bg-transparent">
 
-      <div className="relative mx-auto flex max-w-7xl flex-col items-start gap-6 px-6 pb-24 pt-36 sm:gap-8 sm:pt-44 md:px-10 lg:px-16">
-        <h1 ref={headerRef} className="max-w-2xl text-left text-5xl font-extralight leading-[1.05] tracking-tight text-white sm:text-6xl md:text-7xl">
+      <div className="relative mx-auto flex max-w-7xl flex-col items-start gap-4 sm:gap-6 px-4 sm:px-6 pb-16 sm:pb-24 pt-20 sm:pt-36 md:gap-8 md:pt-44 md:px-10 lg:px-16">
+        <h1 ref={headerRef} className="max-w-2xl text-left text-3xl sm:text-4xl md:text-5xl font-extralight leading-[1.05] tracking-tight text-white lg:text-6xl xl:text-7xl">
           {title}
         </h1>
 
-        <p ref={paraRef} className="max-w-xl text-left text-base font-light leading-relaxed tracking-tight text-white/75 sm:text-lg">
+        <p ref={paraRef} className="max-w-xl text-left text-sm sm:text-base font-light leading-relaxed tracking-tight text-white/75 md:text-lg">
           {description}
         </p>
 
-        <div ref={ctaRef} className="flex flex-wrap items-center gap-3 pt-2">
+        <div ref={ctaRef} className="flex flex-wrap items-center gap-2 sm:gap-3 pt-2">
           {ctaButtons.map((button, index) => (
             <a
               key={index}
@@ -354,7 +354,7 @@ export default function NeuralNetworkHero({
                   button.onClick();
                 }
               }}
-              className={`rounded-2xl border border-white/10 px-5 py-3 text-sm font-light tracking-tight transition-colors focus:outline-none focus:ring-2 focus:ring-white/30 duration-300 ${
+              className={`rounded-2xl border border-white/10 px-4 sm:px-5 py-2 sm:py-3 text-xs sm:text-sm font-light tracking-tight transition-colors focus:outline-none focus:ring-2 focus:ring-white/30 duration-300 ${
                 button.primary
                   ? "bg-white/10 text-white backdrop-blur-sm hover:bg-white/20"
                   : "text-white/80 hover:bg-white/5"

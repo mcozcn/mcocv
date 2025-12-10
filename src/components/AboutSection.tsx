@@ -109,7 +109,7 @@ const AboutSection = ({ language }: AboutSectionProps) => {
   };
 
   return (
-    <section id="about" className="relative py-40 bg-transparent overflow-hidden">
+    <section id="about" className="relative py-20 sm:py-32 md:py-40 bg-transparent overflow-hidden">
       {/* Minimal Background Elements */}
       <div className="absolute inset-0 z-10">
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
@@ -117,28 +117,28 @@ const AboutSection = ({ language }: AboutSectionProps) => {
 
       <div className="container mx-auto px-4 relative z-20">
         {/* Section Header with 3D Effect */}
-        <div className="text-center mb-32 relative">
-          <div className="inline-block mb-8 relative">
-            <h2 className="text-8xl md:text-9xl font-extralight text-white tracking-tight">
+        <div className="text-center mb-16 sm:mb-24 md:mb-32 relative">
+          <div className="inline-block mb-6 sm:mb-8 relative">
+            <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-extralight text-white tracking-tight">
               {content[language].title}
             </h2>
-            <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-48 h-px bg-white/20"></div>
+            <div className="absolute -bottom-3 sm:-bottom-4 left-1/2 transform -translate-x-1/2 w-32 sm:w-48 h-px bg-white/20"></div>
           </div>
-          <p className="text-3xl md:text-4xl font-extralight text-white/75 tracking-tight mt-8">
+          <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extralight text-white/75 tracking-tight mt-4 sm:mt-6 md:mt-8 px-4">
             {content[language].subtitle}
           </p>
         </div>
 
         {/* Stats Row with Enhanced Animation */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-32">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 mb-16 sm:mb-24 md:mb-32">
           {content[language].stats.map((stat, index) => (
             <div key={index} className="text-center group relative">
-                <div className="relative rounded-2xl p-8 transform hover:scale-105 transition-all duration-500 border border-white/10 bg-white/5 backdrop-blur-sm">
+                <div className="relative rounded-2xl p-4 sm:p-6 md:p-8 transform hover:scale-105 transition-all duration-500 border border-white/10 bg-white/5 backdrop-blur-sm">
                 <div className="relative z-10">
-                  <div className="text-5xl md:text-7xl font-extralight text-white mb-4">
+                  <div className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-extralight text-white mb-2 sm:mb-4">
                     {stat.number}
                   </div>
-                  <p className="text-white/60 text-sm font-light tracking-tight uppercase">{stat.label}</p>
+                  <p className="text-white/60 text-xs sm:text-sm font-light tracking-tight uppercase">{stat.label}</p>
                 </div>
               </div>
             </div>
@@ -146,37 +146,37 @@ const AboutSection = ({ language }: AboutSectionProps) => {
         </div>
 
         {/* Main Content Grid with Parallax */}
-        <div className="grid lg:grid-cols-2 gap-32 items-center mb-32">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-16 md:gap-24 lg:gap-32 items-center mb-16 sm:mb-24 md:mb-32">
           {/* Text Content with Advanced Typography */}
-          <div className="space-y-10 relative">
-            <div className="space-y-8 text-white/75">
-              <p className="text-xl leading-relaxed border-l border-white/10 pl-8 font-light">
+          <div className="space-y-6 sm:space-y-8 md:space-y-10 relative">
+            <div className="space-y-6 sm:space-y-8 text-white/75">
+              <p className="text-base sm:text-lg md:text-xl leading-relaxed border-l border-white/10 pl-4 sm:pl-6 md:pl-8 font-light">
                 {content[language].description1}
               </p>
-              <p className="text-xl leading-relaxed border-l border-white/10 pl-8 font-light">
+              <p className="text-base sm:text-lg md:text-xl leading-relaxed border-l border-white/10 pl-4 sm:pl-6 md:pl-8 font-light">
                 {content[language].description2}
               </p>
-              <p className="text-xl leading-relaxed border-l border-white/10 pl-8 font-light">
+              <p className="text-base sm:text-lg md:text-xl leading-relaxed border-l border-white/10 pl-4 sm:pl-6 md:pl-8 font-light">
                 {content[language].description3}
               </p>
             </div>
             
             <button 
               onClick={() => scrollToSection('experience')}
-              className="group relative px-12 py-6 border border-white/10 bg-white/10 text-white font-light text-xl tracking-tight transition-all duration-300 hover:bg-white/20 backdrop-blur-sm"
+              className="group relative px-6 sm:px-8 md:px-12 py-3 sm:py-4 md:py-6 border border-white/10 bg-white/10 text-white font-light text-sm sm:text-base md:text-xl tracking-tight transition-all duration-300 hover:bg-white/20 backdrop-blur-sm"
             >
               {content[language].cta}
             </button>
           </div>
           
           {/* Interactive Image Section */}
-          <div className="relative group">
+          <div className="relative group hidden lg:block">
             <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-3xl blur-3xl group-hover:blur-2xl transition-all duration-700 animate-pulse-glow"></div>
             <div className="relative overflow-hidden rounded-3xl border-2 border-cyan-500/30 transform group-hover:scale-105 group-hover:rotate-2 transition-all duration-700">
               <img 
                 src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop" 
                 alt="Digital transformation"
-                className="w-full h-96 object-cover transform group-hover:scale-110 transition-transform duration-1000"
+                className="w-full h-64 md:h-80 lg:h-96 object-cover transform group-hover:scale-110 transition-transform duration-1000"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
               
@@ -196,19 +196,19 @@ const AboutSection = ({ language }: AboutSectionProps) => {
         </div>
         
         {/* Strengths Grid with Advanced Hover Effects */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
           {Object.entries(content[language].strengths).map(([key, strength], index) => (
             <Card key={key} className={`relative border border-white/10 bg-white/5 backdrop-blur-sm hover:border-white/20 transition-all duration-300 group cursor-pointer transform hover:scale-105 ${
               index % 2 === 0 ? 'lg:-mt-12' : 'lg:mt-12'
             }`}>
-              <CardContent className="p-10 text-center relative z-10">
-                <div className="text-5xl mb-6 transform group-hover:scale-110 transition-all duration-300">
+              <CardContent className="p-6 sm:p-8 md:p-10 text-center relative z-10">
+                <div className="text-3xl sm:text-4xl md:text-5xl mb-4 sm:mb-6 transform group-hover:scale-110 transition-all duration-300">
                   {strength.icon}
                 </div>
-                <h3 className="text-2xl font-extralight text-white mb-4 transition-colors duration-300">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-extralight text-white mb-2 sm:mb-4 transition-colors duration-300">
                   {strength.title}
                 </h3>
-                <p className="text-white/60 leading-relaxed font-light transition-colors duration-300">
+                <p className="text-white/60 text-sm sm:text-base leading-relaxed font-light transition-colors duration-300">
                   {strength.description}
                 </p>
               </CardContent>

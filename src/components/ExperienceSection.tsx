@@ -81,7 +81,7 @@ const ExperienceSection = ({
       });
     }
   };
-  return <section id="experience" className="relative py-40 bg-transparent overflow-hidden">
+  return <section id="experience" className="relative py-20 sm:py-32 md:py-40 bg-transparent overflow-hidden">
       {/* Minimal Background */}
       <div className="absolute inset-0 z-10">
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
@@ -89,20 +89,20 @@ const ExperienceSection = ({
 
       <div className="container mx-auto px-4 relative z-20">
         {/* Section Header with 3D Effect */}
-        <div className="text-center mb-32 relative">
-          <div className="inline-block mb-8 relative">
-            <h2 className="text-8xl font-extralight text-white tracking-tight py-[19px] md:text-9xl">
+        <div className="text-center mb-16 sm:mb-24 md:mb-32 relative">
+          <div className="inline-block mb-6 sm:mb-8 relative">
+            <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-extralight text-white tracking-tight">
               {content[language].title}
             </h2>
-            <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-64 h-px bg-white/20"></div>
+            <div className="absolute -bottom-3 sm:-bottom-4 md:-bottom-6 left-1/2 transform -translate-x-1/2 w-32 sm:w-48 md:w-64 h-px bg-white/20"></div>
           </div>
-          <p className="text-3xl md:text-4xl font-extralight text-white/75 tracking-tight mt-8">
+          <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extralight text-white/75 tracking-tight mt-4 sm:mt-6 md:mt-8 px-4">
             {content[language].subtitle}
           </p>
         </div>
 
         {/* Experience Timeline with Advanced 3D Cards */}
-        <div className="max-w-6xl mx-auto space-y-16">
+        <div className="max-w-6xl mx-auto space-y-8 sm:space-y-12 md:space-y-16">
           {content[language].experiences.map((exp, index) => <div key={index} className={`relative group ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} flex flex-col lg:flex items-center gap-16`}>
               {/* Timeline Line */}
               <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-indigo-500 via-purple-500 to-pink-500 transform -translate-x-1/2 hidden lg:block animate-pulse-glow"></div>
@@ -110,22 +110,22 @@ const ExperienceSection = ({
               {/* Experience Card */}
               <div className="lg:w-1/2 relative">
                 <Card className="border border-white/10 bg-white/5 backdrop-blur-sm hover:border-white/20 transition-all duration-300 group cursor-pointer transform hover:scale-105">
-                  <CardContent className="p-10 relative z-10">
+                  <CardContent className="p-6 sm:p-8 md:p-10 relative z-10">
                     {/* Period Badge */}
-                    <div className="absolute -top-4 -right-4 border border-white/10 bg-white/10 text-white px-6 py-3 rounded-full text-sm font-light tracking-tight backdrop-blur-sm">
+                    <div className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 border border-white/10 bg-white/10 text-white px-3 py-1.5 sm:px-4 sm:py-2 md:px-6 md:py-3 rounded-full text-xs sm:text-sm font-light tracking-tight backdrop-blur-sm">
                       {exp.period}
                     </div>
                     
                     {/* Job Title */}
-                    <h3 className="text-3xl font-extralight text-white mb-8 transition-all duration-300">
+                    <h3 className="text-xl sm:text-2xl md:text-3xl font-extralight text-white mb-4 sm:mb-6 md:mb-8 transition-all duration-300">
                       {exp.title}
                     </h3>
                     
                     {/* Achievements */}
-                    <div className="space-y-4">
+                    <div className="space-y-3 sm:space-y-4">
                       {exp.achievements.map((achievement, achIndex) => <div key={achIndex} className="flex items-start transition-transform duration-300">
-                          <div className="w-1 h-1 bg-white/40 rounded-full mt-2 mr-4 flex-shrink-0"></div>
-                          <span className="text-white/75 leading-relaxed font-light">{achievement}</span>
+                          <div className="w-1 h-1 bg-white/40 rounded-full mt-2 mr-3 sm:mr-4 flex-shrink-0"></div>
+                          <span className="text-white/75 text-sm sm:text-base leading-relaxed font-light">{achievement}</span>
                         </div>)}
                     </div>
                   </CardContent>
@@ -154,8 +154,8 @@ const ExperienceSection = ({
         </div>
         
         {/* Enhanced CTA Button */}
-        <div className="text-center mt-24">
-          <button onClick={() => scrollToSection('projects')} className="group relative px-16 py-8 border border-white/10 bg-white/10 text-white font-light text-2xl tracking-tight transition-all duration-300 hover:bg-white/20 backdrop-blur-sm">
+        <div className="text-center mt-12 sm:mt-16 md:mt-24">
+          <button onClick={() => scrollToSection('projects')} className="group relative px-6 sm:px-8 md:px-12 lg:px-16 py-4 sm:py-6 md:py-8 border border-white/10 bg-white/10 text-white font-light text-sm sm:text-base md:text-xl lg:text-2xl tracking-tight transition-all duration-300 hover:bg-white/20 backdrop-blur-sm">
             {content[language].cta}
           </button>
         </div>

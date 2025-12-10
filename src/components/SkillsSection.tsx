@@ -138,7 +138,7 @@ const SkillsSection = ({ language }: SkillsSectionProps) => {
   };
 
   return (
-    <section id="skills" className="relative py-40 bg-transparent overflow-hidden">
+    <section id="skills" className="relative py-20 sm:py-32 md:py-40 bg-transparent overflow-hidden">
       {/* Minimal Background */}
       <div className="absolute inset-0 z-10">
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
@@ -146,21 +146,21 @@ const SkillsSection = ({ language }: SkillsSectionProps) => {
 
       <div className="container mx-auto px-4 relative z-20">
         {/* Section Header */}
-        <div className="text-center mb-32 relative">
-          <div className="inline-block mb-8 relative">
-            <h2 className="text-8xl md:text-9xl font-extralight text-white tracking-tight">
+        <div className="text-center mb-16 sm:mb-24 md:mb-32 relative">
+          <div className="inline-block mb-6 sm:mb-8 relative">
+            <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-extralight text-white tracking-tight">
               {content[language].title}
             </h2>
-            <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-64 h-px bg-white/20"></div>
+            <div className="absolute -bottom-3 sm:-bottom-4 md:-bottom-6 left-1/2 transform -translate-x-1/2 w-32 sm:w-48 md:w-64 h-px bg-white/20"></div>
           </div>
-          <p className="text-3xl md:text-4xl font-extralight text-white/75 tracking-tight mt-8">
+          <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extralight text-white/75 tracking-tight mt-4 sm:mt-6 md:mt-8 px-4">
             {content[language].subtitle}
           </p>
         </div>
         
         {/* Skills Grid with Unique Hover Effects */}
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-12">
             {content[language].skills.map((skill, index) => (
               <Card 
                 key={index} 
@@ -174,29 +174,29 @@ const SkillsSection = ({ language }: SkillsSectionProps) => {
                   ${index % 2 === 0 ? 'lg:-mt-8' : 'lg:mt-8'}
                 `}
               >
-                <CardContent className="p-10 text-center relative z-10">
+                <CardContent className="p-6 sm:p-8 md:p-10 text-center relative z-10">
                   {/* Skill Icon */}
-                  <div className="relative mb-8">
-                    <div className="w-24 h-24 mx-auto border border-white/10 bg-white/5 rounded-full flex items-center justify-center text-4xl transition-all duration-300 group-hover:scale-110 backdrop-blur-sm">
+                  <div className="relative mb-4 sm:mb-6 md:mb-8">
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 mx-auto border border-white/10 bg-white/5 rounded-full flex items-center justify-center text-2xl sm:text-3xl md:text-4xl transition-all duration-300 group-hover:scale-110 backdrop-blur-sm">
                       <span>{skill.icon}</span>
                     </div>
                   </div>
                   
                   {/* Skill Name */}
-                  <h3 className="text-2xl font-extralight text-white mb-4 transition-all duration-300">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-extralight text-white mb-2 sm:mb-3 md:mb-4 transition-all duration-300">
                     {skill.name}
                   </h3>
                   
                   {/* Description */}
-                  <p className="text-white/60 text-sm mb-8 leading-relaxed font-light transition-all duration-300">
+                  <p className="text-white/60 text-xs sm:text-sm mb-4 sm:mb-6 md:mb-8 leading-relaxed font-light transition-all duration-300">
                     {skill.description}
                   </p>
                   
                   {/* Skill Level with Progress Bar */}
-                  <div className="space-y-4">
+                  <div className="space-y-2 sm:space-y-3 md:space-y-4">
                     <div className="flex justify-between items-center">
-                      <span className="text-sm font-light text-white/60 tracking-tight">{content[language].skillLevel}</span>
-                      <span className="text-lg font-extralight text-white">
+                      <span className="text-xs sm:text-sm font-light text-white/60 tracking-tight">{content[language].skillLevel}</span>
+                      <span className="text-base sm:text-lg font-extralight text-white">
                         {skill.level}%
                       </span>
                     </div>
@@ -216,10 +216,10 @@ const SkillsSection = ({ language }: SkillsSectionProps) => {
           </div>
           
           {/* CTA Button */}
-          <div className="text-center mt-24">
+          <div className="text-center mt-12 sm:mt-16 md:mt-24">
             <button 
               onClick={() => scrollToSection('contact')}
-              className="group relative px-16 py-8 border border-white/10 bg-white/10 text-white font-light text-2xl tracking-tight transition-all duration-300 hover:bg-white/20 backdrop-blur-sm"
+              className="group relative px-6 sm:px-8 md:px-12 lg:px-16 py-4 sm:py-6 md:py-8 border border-white/10 bg-white/10 text-white font-light text-sm sm:text-base md:text-xl lg:text-2xl tracking-tight transition-all duration-300 hover:bg-white/20 backdrop-blur-sm"
             >
               {content[language].cta}
             </button>
