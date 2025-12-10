@@ -47,30 +47,10 @@ const HeroSection = ({ language, setLanguage }: HeroSectionProps) => {
   const microDetails = content[language].stats.map(stat => `${stat.number} ${stat.label}`);
 
   return (
-    <section id="home" className="relative min-h-screen overflow-hidden bg-transparent">
-      {/* Neural Network Hero with Original Minimal Design */}
-      <NeuralNetworkHero
-        title={`${content[language].title} ${content[language].subtitle}`}
-        description={content[language].description}
-        ctaButtons={[
-          { 
-            text: content[language].cta, 
-            href: '#about', 
-            primary: true,
-            onClick: scrollToAbout
-          },
-          { 
-            text: language === 'tr' ? 'Daha Fazla' : 'Learn More', 
-            href: '#about',
-            onClick: scrollToAbout
-          }
-        ]}
-        microDetails={microDetails}
-      />
-
+    <section id="home" className="relative min-h-screen overflow-hidden bg-transparent flex flex-col lg:block">
       {/* Profile Image - Mobile: Above Content, Desktop: Right Side Overlay */}
-      {/* Mobile Layout */}
-      <div className="lg:hidden relative z-10 mb-6">
+      {/* Mobile Layout - Resim Üstte */}
+      <div className="lg:hidden relative z-10 pt-20 pb-6">
         <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto flex flex-col items-center">
             <div className="relative group">
@@ -91,6 +71,21 @@ const HeroSection = ({ language, setLanguage }: HeroSectionProps) => {
           </div>
         </div>
       </div>
+
+      {/* Neural Network Hero with Original Minimal Design */}
+      <NeuralNetworkHero
+        title={`${content[language].title} ${content[language].subtitle}`}
+        description={content[language].description}
+        ctaButtons={[
+          { 
+            text: content[language].cta, 
+            href: '#about', 
+            primary: true,
+            onClick: scrollToAbout
+          }
+        ]}
+        microDetails={microDetails}
+      />
 
       {/* Desktop Layout - Right Side Overlay */}
       <div className="hidden lg:block absolute inset-0 pointer-events-none z-10">
