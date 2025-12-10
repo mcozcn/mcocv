@@ -146,7 +146,7 @@ const ProjectsSection = ({ language }: ProjectsSectionProps) => {
   }, []);
 
   return (
-    <section id="projects" className="relative py-40 bg-transparent overflow-hidden">
+    <section id="projects" className="relative py-20 md:py-40 bg-transparent overflow-hidden">
       {/* Minimal Background */}
       <div className="absolute inset-0 z-10">
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
@@ -154,23 +154,23 @@ const ProjectsSection = ({ language }: ProjectsSectionProps) => {
 
       <div className="container mx-auto px-4 relative z-20">
         {/* Section Header with Holographic Effect */}
-        <div className="text-center mb-32 relative">
-          <div className="inline-block mb-8 relative">
-            <h2 className="text-8xl md:text-9xl font-extralight text-white tracking-tight">
+        <div className="text-center mb-16 md:mb-32 relative">
+          <div className="inline-block mb-6 md:mb-8 relative">
+            <h2 className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-extralight text-white tracking-tight">
               {content[language].title}
             </h2>
-            <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-64 h-px bg-white/20"></div>
+            <div className="absolute -bottom-4 md:-bottom-6 left-1/2 transform -translate-x-1/2 w-32 md:w-64 h-px bg-white/20"></div>
           </div>
-          <p className="text-3xl md:text-4xl font-extralight text-white/75 tracking-tight mt-8">
+          <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extralight text-white/75 tracking-tight mt-4 md:mt-8 px-4">
             {content[language].subtitle}
           </p>
         </div>
 
         {/* Projects Grid with Links */}
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-16">
             {content[language].projects.map((project, index) => (
-              <Card key={index} className="border border-white/10 bg-white/5 backdrop-blur-sm hover:border-white/20 transition-all duration-300 group cursor-pointer transform hover:scale-105 overflow-hidden">
+              <Card key={index} className="border border-white/10 bg-white/5 backdrop-blur-sm hover:border-white/20 transition-all duration-300 group transform hover:scale-[1.02] md:hover:scale-105 overflow-hidden">
                 {/* Project Image with Advanced Effects */}
                 <div className="relative aspect-video overflow-hidden">
                   <img 
@@ -181,12 +181,12 @@ const ProjectsSection = ({ language }: ProjectsSectionProps) => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                   
                   {/* Category Badge */}
-                  <div className="absolute top-4 left-4 border border-white/10 bg-white/10 text-white px-4 py-2 rounded-full text-sm font-light tracking-tight backdrop-blur-sm">
+                  <div className="absolute top-2 left-2 md:top-4 md:left-4 border border-white/10 bg-white/10 text-white px-2 md:px-4 py-1 md:py-2 rounded-full text-xs md:text-sm font-light tracking-tight backdrop-blur-sm">
                     {project.category}
                   </div>
                   
                   {/* Year Badge */}
-                  <div className="absolute top-4 right-4 border border-white/10 bg-white/10 text-white px-4 py-2 rounded-full text-sm font-light tracking-tight backdrop-blur-sm">
+                  <div className="absolute top-2 right-2 md:top-4 md:right-4 border border-white/10 bg-white/10 text-white px-2 md:px-4 py-1 md:py-2 rounded-full text-xs md:text-sm font-light tracking-tight backdrop-blur-sm">
                     {project.year}
                   </div>
 
@@ -207,31 +207,33 @@ const ProjectsSection = ({ language }: ProjectsSectionProps) => {
                   ))}
                 </div>
                 
-                <CardContent className="p-10 relative z-10">
+                <CardContent className="p-6 md:p-10 relative z-10">
                   {/* Project Title */}
-                  <h3 className="text-2xl font-extralight text-white mb-6 transition-all duration-300">
+                  <h3 className="text-xl md:text-2xl font-extralight text-white mb-4 md:mb-6 transition-all duration-300">
                     {project.name}
                   </h3>
                   
                   {/* Description */}
-                  <p className="text-white/75 mb-6 leading-relaxed font-light transition-colors duration-300">
+                  <p className="text-white/75 mb-4 md:mb-6 leading-relaxed font-light text-sm md:text-base transition-colors duration-300">
                     {project.description}
                   </p>
                   
                   {/* Result Badge */}
-                  <div className="border border-white/10 bg-white/5 p-4 rounded-xl mb-6 backdrop-blur-sm">
-                    <p className="text-white/80 font-light text-sm tracking-tight">
+                  <div className="border border-white/10 bg-white/5 p-3 md:p-4 rounded-xl mb-4 md:mb-6 backdrop-blur-sm">
+                    <p className="text-white/80 font-light text-xs md:text-sm tracking-tight">
                       <span className="font-extralight">{content[language].result}:</span> {project.result}
                     </p>
                   </div>
                   
                   {/* CTA Button with Link */}
-                  <button 
-                    onClick={() => window.open(project.link, '_blank')}
-                    className="w-full border border-white/10 bg-white/10 text-white font-light py-4 text-lg tracking-tight transition-all duration-300 hover:bg-white/20 backdrop-blur-sm"
+                  <a 
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full border border-white/10 bg-white/10 text-white font-light py-3 md:py-4 text-sm md:text-lg tracking-tight transition-all duration-300 hover:bg-white/20 backdrop-blur-sm text-center relative z-20 cursor-pointer"
                   >
                     {project.cta}
-                  </button>
+                  </a>
 
                   {/* Background Effects */}
                   <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-lg"></div>
