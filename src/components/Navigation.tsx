@@ -65,17 +65,17 @@ const Navigation = ({ language, setLanguage }: NavigationProps) => {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
       isScrolled 
-        ? 'bg-black/80 backdrop-blur-2xl border-b border-cyan-500/20' 
+        ? 'bg-black/80 backdrop-blur-2xl border-b border-white/10' 
         : 'bg-transparent'
     }`}>
       <div className="container mx-auto px-4 py-6">
         <div className="flex items-center justify-between">
           {/* Logo with Fixed Text */}
           <div className="relative group">
-            <div className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-white to-purple-400 tracking-wider">
+            <div className="text-2xl font-extralight text-white tracking-tight">
               MÜCAHİT ÖZCAN
             </div>
-            <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-500 to-purple-500 group-hover:w-full transition-all duration-300"></div>
+            <div className="absolute -bottom-1 left-0 w-0 h-px bg-white/40 group-hover:w-full transition-all duration-300"></div>
           </div>
           
           {/* Desktop Navigation - Minimal & Modern */}
@@ -84,51 +84,41 @@ const Navigation = ({ language, setLanguage }: NavigationProps) => {
               <button
                 key={key}
                 onClick={() => scrollToSection(key)}
-                className={`relative text-sm font-medium tracking-wider uppercase transition-all duration-300 group ${
-                  activeSection === key ? 'text-cyan-400' : 'text-gray-300 hover:text-white'
+                className={`relative text-sm font-light tracking-tight uppercase transition-all duration-300 group ${
+                  activeSection === key ? 'text-white' : 'text-white/60 hover:text-white/80'
                 }`}
               >
                 {value}
-                <span className={`absolute -bottom-1 left-0 w-0 h-px bg-gradient-to-r from-cyan-400 to-purple-400 transition-all duration-300 group-hover:w-full ${
+                <span className={`absolute -bottom-1 left-0 w-0 h-px bg-white/40 transition-all duration-300 group-hover:w-full ${
                   activeSection === key ? 'w-full' : ''
                 }`}></span>
               </button>
             ))}
           </div>
 
-          <div className="flex items-center space-x-6">
-            {/* Language Switcher - Redesigned */}
-            <div className="flex items-center space-x-2">
-              <button
-                onClick={() => setLanguage('tr')}
-                className={`px-3 py-1 text-xs font-bold tracking-wider transition-all duration-300 ${
-                  language === 'tr' 
-                    ? 'text-cyan-400 border-b border-cyan-400' 
-                    : 'text-gray-400 hover:text-white'
-                }`}
-              >
-                TR
-              </button>
-              <div className="w-px h-4 bg-gray-600"></div>
-              <button
-                onClick={() => setLanguage('en')}
-                className={`px-3 py-1 text-xs font-bold tracking-wider transition-all duration-300 ${
-                  language === 'en' 
-                    ? 'text-cyan-400 border-b border-cyan-400' 
-                    : 'text-gray-400 hover:text-white'
-                }`}
-              >
-                EN
-              </button>
-            </div>
-            
-            {/* CTA Button - Unique Design */}
-            <Button 
-              onClick={() => scrollToSection('contact')}
-              className="relative px-6 py-2 bg-transparent border-2 border-cyan-500 text-cyan-400 hover:bg-cyan-500 hover:text-black font-bold text-sm tracking-wider uppercase transition-all duration-300 transform hover:scale-105 skew-x-[-12deg]"
+          {/* Language Switcher - Minimal */}
+          <div className="flex items-center space-x-2">
+            <button
+              onClick={() => setLanguage('tr')}
+              className={`px-3 py-1 text-xs font-light tracking-tight transition-all duration-300 ${
+                language === 'tr' 
+                  ? 'text-white border-b border-white/40' 
+                  : 'text-white/60 hover:text-white/80'
+              }`}
             >
-              <span className="skew-x-[12deg] block">{content[language].cta}</span>
-            </Button>
+              TR
+            </button>
+            <div className="w-px h-4 bg-white/20"></div>
+            <button
+              onClick={() => setLanguage('en')}
+              className={`px-3 py-1 text-xs font-light tracking-tight transition-all duration-300 ${
+                language === 'en' 
+                  ? 'text-white border-b border-white/40' 
+                  : 'text-white/60 hover:text-white/80'
+              }`}
+            >
+              EN
+            </button>
           </div>
         </div>
       </div>

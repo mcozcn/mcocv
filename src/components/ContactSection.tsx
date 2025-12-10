@@ -118,45 +118,22 @@ const ContactSection = ({
       [e.target.name]: e.target.value
     });
   };
-  return <section id="contact" className="relative py-40 bg-gradient-to-br from-black via-gray-900 to-blue-900/30 overflow-hidden">
-      {/* Animated Background Grid */}
-      <div className="absolute inset-0 cyber-grid opacity-20"></div>
-      
-      {/* Holographic Data Streams */}
-      <div className="absolute inset-0">
-        {[...Array(12)].map((_, i) => <div key={i} className="absolute w-px h-full bg-gradient-to-b from-transparent via-violet-400/50 to-transparent animate-data-stream" style={{
-        left: `${8 + i * 8}%`,
-        animationDelay: `${i * 0.4}s`,
-        animationDuration: `${2 + i % 3}s`
-      }}></div>)}
+  return <section id="contact" className="relative py-40 bg-transparent overflow-hidden">
+      {/* Minimal Background */}
+      <div className="absolute inset-0 z-10">
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
       </div>
 
-      {/* Interactive Mouse Follower */}
-      <div className="absolute w-96 h-96 bg-gradient-to-r from-violet-500/10 to-pink-500/10 rounded-full blur-3xl pointer-events-none" style={{
-      left: `${mousePosition.x}%`,
-      top: `${mousePosition.y}%`,
-      transform: 'translate(-50%, -50%)',
-      transition: 'all 0.3s ease-out'
-    }}></div>
-
-      {/* Floating Geometric Elements */}
-      <div className="absolute top-20 right-20 w-40 h-40 border-2 border-violet-400/30 rotate-45 animate-spin-slow"></div>
-      <div className="absolute bottom-40 left-10 w-32 h-32 bg-gradient-to-r from-pink-500/20 to-transparent rotate-12 animate-bounce-slow"></div>
-
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 relative z-20">
         {/* Section Header with Advanced Effects */}
         <div className="text-center mb-32 relative py-px">
           <div className="inline-block mb-8 relative">
-            <h2 className="text-8xl md:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-pink-300 to-purple-400 tracking-tighter transform hover:scale-105 transition-transform duration-500 animate-hologram">
+            <h2 className="text-8xl md:text-9xl font-extralight text-white tracking-tight">
               {content[language].title}
             </h2>
-            {/* Electric Effect */}
-            <div className="absolute inset-0 text-8xl md:text-9xl font-black text-violet-400/30 transform animate-glitch py-0">
-              {content[language].title}
-            </div>
-            <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-64 h-3 bg-gradient-to-r from-violet-500 via-pink-500 to-purple-500 animate-gradient-shift blur-sm"></div>
+            <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-64 h-px bg-white/20"></div>
           </div>
-          <p className="text-3xl md:text-4xl font-light text-violet-300 tracking-widest animate-fade-in delay-200 neon-purple">
+          <p className="text-3xl md:text-4xl font-extralight text-white/75 tracking-tight mt-8">
             {content[language].subtitle}
           </p>
         </div>
@@ -167,27 +144,27 @@ const ContactSection = ({
             {/* Contact Information */}
             <div className="space-y-12">
               {/* Form Card */}
-              <Card className="glass border-2 border-cyan-500/30 backdrop-blur-xl hover:border-cyan-500/60 transition-all duration-700 group">
+              <Card className="border border-white/10 bg-white/5 backdrop-blur-sm hover:border-white/20 transition-all duration-300 group">
                 <CardContent className="p-12">
                   <div className="mb-10">
-                    <h3 className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-blue-300 mb-4">
+                    <h3 className="text-3xl font-extralight text-white mb-4 tracking-tight">
                       {content[language].formTitle}
                     </h3>
-                    <p className="text-gray-400 text-lg">
+                    <p className="text-white/60 text-lg font-light">
                       {content[language].formSubtitle}
                     </p>
                   </div>
 
                   <form onSubmit={handleSubmit} className="space-y-8">
                     <div className="space-y-6">
-                      <Input placeholder={content[language].name} className="glass border-blue-500/30 text-white placeholder-gray-400 h-14 text-lg" />
-                      <Input type="email" placeholder={content[language].email} className="glass border-blue-500/30 text-white placeholder-gray-400 h-14 text-lg" />
-                      <Textarea placeholder={content[language].message} rows={6} className="glass border-blue-500/30 text-white placeholder-gray-400 text-lg resize-none" />
+                      <Input placeholder={content[language].name} name="name" value={formData.name} onChange={handleInputChange} className="border-white/10 bg-white/5 text-white placeholder-white/40 h-14 text-lg font-light backdrop-blur-sm" />
+                      <Input type="email" placeholder={content[language].email} name="email" value={formData.email} onChange={handleInputChange} className="border-white/10 bg-white/5 text-white placeholder-white/40 h-14 text-lg font-light backdrop-blur-sm" />
+                      <Textarea placeholder={content[language].message} name="message" value={formData.message} onChange={handleInputChange} rows={6} className="border-white/10 bg-white/5 text-white placeholder-white/40 text-lg resize-none font-light backdrop-blur-sm" />
                     </div>
                     
-                    <Button type="submit" className="w-full bg-gradient-to-r from-blue-500 to-cyan-600 hover:from-blue-400 hover:to-cyan-500 text-white font-bold py-6 text-xl skew-x-[-15deg] transform hover:scale-105 hover:rotate-1 transition-all duration-500 shadow-2xl hover:shadow-blue-500/50 overflow-hidden group">
-                      <span className="skew-x-[15deg] block relative z-10">{content[language].send}</span>
-                    </Button>
+                    <button type="submit" className="w-full border border-white/10 bg-white/10 text-white font-light py-6 text-xl tracking-tight transition-all duration-300 hover:bg-white/20 backdrop-blur-sm">
+                      {content[language].send}
+                    </button>
                   </form>
                 </CardContent>
               </Card>
@@ -196,36 +173,36 @@ const ContactSection = ({
             {/* Contact Details */}
             <div className="space-y-12">
               {/* Email Card */}
-              <Card className="glass border-2 border-cyan-500/30 backdrop-blur-xl hover:border-cyan-500/60 transition-all duration-700 group cursor-pointer transform hover:scale-105 hover:-translate-y-4">
+              <Card className="border border-white/10 bg-white/5 backdrop-blur-sm hover:border-white/20 transition-all duration-300 group cursor-pointer transform hover:scale-105">
                 <CardContent className="p-10 text-center">
-                  <div className="text-6xl mb-8 transform group-hover:scale-125 group-hover:rotate-12 transition-all duration-700">
+                  <div className="text-6xl mb-8 transform group-hover:scale-110 transition-all duration-300">
                     📧
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors duration-500">
+                  <h3 className="text-2xl font-extralight text-white mb-4 transition-colors duration-300">
                     {content[language].contactInfo.email.title}
                   </h3>
-                  <p className="text-xl text-cyan-400 mb-4 font-mono">
+                  <p className="text-xl text-white/80 mb-4 font-light tracking-tight">
                     {content[language].contactInfo.email.value}
                   </p>
-                  <p className="text-gray-400">
+                  <p className="text-white/60 font-light">
                     {content[language].contactInfo.email.description}
                   </p>
                 </CardContent>
               </Card>
 
               {/* LinkedIn Card */}
-              <Card className="glass border-2 border-blue-500/30 backdrop-blur-xl hover:border-blue-500/60 transition-all duration-700 group cursor-pointer transform hover:scale-105 hover:-translate-y-4" onClick={() => window.open('https://www.linkedin.com/in/mcozcn/', '_blank')}>
+              <Card className="border border-white/10 bg-white/5 backdrop-blur-sm hover:border-white/20 transition-all duration-300 group cursor-pointer transform hover:scale-105" onClick={() => window.open('https://www.linkedin.com/in/mcozcn/', '_blank')}>
                 <CardContent className="p-10 text-center">
                   <div className="flex justify-center mb-8">
-                    <Linkedin size={64} className="text-blue-400 transform group-hover:scale-125 group-hover:rotate-12 transition-all duration-700" />
+                    <Linkedin size={64} className="text-white/80 transform group-hover:scale-110 transition-all duration-300" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors duration-500">
+                  <h3 className="text-2xl font-extralight text-white mb-4 transition-colors duration-300">
                     {content[language].contactInfo.linkedin.title}
                   </h3>
-                  <p className="text-xl text-blue-400 mb-4">
+                  <p className="text-xl text-white/80 mb-4 font-light">
                     {content[language].contactInfo.linkedin.value}
                   </p>
-                  <p className="text-gray-400">
+                  <p className="text-white/60 font-light">
                     {content[language].contactInfo.linkedin.description}
                   </p>
                 </CardContent>
@@ -236,8 +213,8 @@ const ContactSection = ({
       </div>
 
       {/* Section Bottom Effect */}
-      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-gray-900 to-transparent"></div>
-      <div className="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-r from-transparent via-violet-500 to-transparent animate-pulse"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-black to-transparent"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
     </section>;
 };
 export default ContactSection;

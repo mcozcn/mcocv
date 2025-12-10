@@ -25,7 +25,17 @@ const ProjectsSection = ({ language }: ProjectsSectionProps) => {
           cta: 'Uygulamayı İncele',
           image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=400&h=300&fit=crop',
           category: 'App',
-          link: 'https://beautiq.lovable.app'
+          link: 'https://beautiq-nine.vercel.app/'
+        },
+        {
+          name: 'Core – Spor Salonu Yönetimi',
+          year: '2024–2025',
+          description: 'Spor Salonları için üye takibi, ödeme ve antreman grup programları yönetimi sunan sistem.',
+          result: 'Üye ve Ödeme Takip sistemi ile verimlilik %50 artış',
+          cta: 'Uygulamayı İncele',
+          image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&h=300&fit=crop',
+          category: 'App',
+          link: 'https://core-ten-lake.vercel.app/'
         },
         {
           name: 'Antalya Turkuaz Web Sitesi',
@@ -72,7 +82,17 @@ const ProjectsSection = ({ language }: ProjectsSectionProps) => {
           cta: 'View Application',
           image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=400&h=300&fit=crop',
           category: 'App',
-          link: 'https://beautiq.lovable.app'
+          link: 'https://beautiq-nine.vercel.app/'
+        },
+        {
+          name: 'Core – Gym Management',
+          year: '2024–2025',
+          description: 'System offering member tracking, payment and training group program management for gyms.',
+          result: '50% efficiency increase with Member and Payment Tracking system',
+          cta: 'View Application',
+          image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&h=300&fit=crop',
+          category: 'App',
+          link: 'https://core-ten-lake.vercel.app/'
         },
         {
           name: 'Antalya Turkuaz Website',
@@ -126,54 +146,22 @@ const ProjectsSection = ({ language }: ProjectsSectionProps) => {
   }, []);
 
   return (
-    <section id="projects" className="relative py-40 bg-gradient-to-br from-black via-gray-900 to-emerald-900/30 overflow-hidden">
-      {/* Animated Background Grid */}
-      <div className="absolute inset-0 cyber-grid opacity-20"></div>
-      
-      {/* Matrix Rain Effect */}
-      <div className="absolute inset-0">
-        {[...Array(20)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-1 h-32 bg-gradient-to-b from-emerald-400/60 to-transparent animate-matrix-rain"
-            style={{
-              left: `${i * 5}%`,
-              animationDelay: `${i * 0.2}s`,
-              animationDuration: `${3 + (i % 3)}s`
-            }}
-          ></div>
-        ))}
+    <section id="projects" className="relative py-40 bg-transparent overflow-hidden">
+      {/* Minimal Background */}
+      <div className="absolute inset-0 z-10">
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
       </div>
 
-      {/* Interactive Mouse Follower */}
-      <div 
-        className="absolute w-96 h-96 bg-gradient-to-r from-emerald-500/10 to-cyan-500/10 rounded-full blur-3xl pointer-events-none"
-        style={{
-          left: `${mousePosition.x}%`,
-          top: `${mousePosition.y}%`,
-          transform: 'translate(-50%, -50%)',
-          transition: 'all 0.3s ease-out'
-        }}
-      ></div>
-
-      {/* Floating Geometric Elements */}
-      <div className="absolute top-20 right-20 w-40 h-40 border-2 border-emerald-400/30 transform rotate-45 animate-spin-slow"></div>
-      <div className="absolute bottom-40 left-10 w-32 h-32 bg-gradient-to-r from-cyan-500/20 to-transparent rotate-12 animate-bounce-slow"></div>
-
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 relative z-20">
         {/* Section Header with Holographic Effect */}
         <div className="text-center mb-32 relative">
           <div className="inline-block mb-8 relative">
-            <h2 className="text-8xl md:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-cyan-300 to-blue-400 tracking-tighter transform hover:scale-105 transition-transform duration-500 animate-hologram">
+            <h2 className="text-8xl md:text-9xl font-extralight text-white tracking-tight">
               {content[language].title}
             </h2>
-            {/* Glitch Effect */}
-            <div className="absolute inset-0 text-8xl md:text-9xl font-black text-emerald-400/20 transform translate-x-2 translate-y-2 -z-10 animate-glitch">
-              {content[language].title}
-            </div>
-            <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-64 h-3 bg-gradient-to-r from-emerald-500 via-cyan-500 to-blue-500 animate-gradient-shift blur-sm"></div>
+            <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-64 h-px bg-white/20"></div>
           </div>
-          <p className="text-3xl md:text-4xl font-light text-emerald-300 tracking-widest animate-fade-in delay-200 neon-cyan">
+          <p className="text-3xl md:text-4xl font-extralight text-white/75 tracking-tight mt-8">
             {content[language].subtitle}
           </p>
         </div>
@@ -182,7 +170,7 @@ const ProjectsSection = ({ language }: ProjectsSectionProps) => {
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16">
             {content[language].projects.map((project, index) => (
-              <Card key={index} className="glass border-2 border-emerald-500/30 backdrop-blur-xl hover:border-emerald-500/60 transition-all duration-700 group cursor-pointer transform hover:scale-110 hover:-translate-y-8 modern-card perspective-1000 overflow-hidden">
+              <Card key={index} className="border border-white/10 bg-white/5 backdrop-blur-sm hover:border-white/20 transition-all duration-300 group cursor-pointer transform hover:scale-105 overflow-hidden">
                 {/* Project Image with Advanced Effects */}
                 <div className="relative aspect-video overflow-hidden">
                   <img 
@@ -193,12 +181,12 @@ const ProjectsSection = ({ language }: ProjectsSectionProps) => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                   
                   {/* Category Badge */}
-                  <div className="absolute top-4 left-4 bg-gradient-to-r from-emerald-500 to-cyan-600 text-white px-4 py-2 rounded-full text-sm font-bold shadow-2xl animate-bounce-slow transform group-hover:scale-125 group-hover:rotate-12 transition-all duration-500">
+                  <div className="absolute top-4 left-4 border border-white/10 bg-white/10 text-white px-4 py-2 rounded-full text-sm font-light tracking-tight backdrop-blur-sm">
                     {project.category}
                   </div>
                   
                   {/* Year Badge */}
-                  <div className="absolute top-4 right-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-4 py-2 rounded-full text-sm font-bold shadow-2xl animate-pulse-glow">
+                  <div className="absolute top-4 right-4 border border-white/10 bg-white/10 text-white px-4 py-2 rounded-full text-sm font-light tracking-tight backdrop-blur-sm">
                     {project.year}
                   </div>
 
@@ -221,31 +209,29 @@ const ProjectsSection = ({ language }: ProjectsSectionProps) => {
                 
                 <CardContent className="p-10 relative z-10">
                   {/* Project Title */}
-                  <h3 className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-emerald-300 mb-6 group-hover:from-emerald-400 group-hover:to-cyan-400 transition-all duration-500 transform group-hover:scale-110">
+                  <h3 className="text-2xl font-extralight text-white mb-6 transition-all duration-300">
                     {project.name}
                   </h3>
                   
-                  {/* Description with Typewriter Effect */}
-                  <p className="text-gray-300 mb-6 leading-relaxed group-hover:text-white transition-colors duration-500 transform group-hover:translate-x-2">
+                  {/* Description */}
+                  <p className="text-white/75 mb-6 leading-relaxed font-light transition-colors duration-300">
                     {project.description}
                   </p>
                   
                   {/* Result Badge */}
-                  <div className="bg-gradient-to-r from-emerald-500/20 to-cyan-500/20 border border-emerald-500/30 p-4 rounded-xl mb-6 group-hover:border-emerald-500/60 transition-all duration-500">
-                    <p className="text-emerald-400 font-bold text-sm neon-cyan">
-                      <span className="font-black">{content[language].result}:</span> {project.result}
+                  <div className="border border-white/10 bg-white/5 p-4 rounded-xl mb-6 backdrop-blur-sm">
+                    <p className="text-white/80 font-light text-sm tracking-tight">
+                      <span className="font-extralight">{content[language].result}:</span> {project.result}
                     </p>
                   </div>
                   
                   {/* CTA Button with Link */}
-                  <Button 
+                  <button 
                     onClick={() => window.open(project.link, '_blank')}
-                    className="w-full bg-gradient-to-r from-emerald-500 to-cyan-600 hover:from-emerald-400 hover:to-cyan-500 text-white font-bold py-4 text-lg transform hover:scale-105 hover:rotate-1 transition-all duration-500 shadow-2xl hover:shadow-emerald-500/50 overflow-hidden group/btn"
+                    className="w-full border border-white/10 bg-white/10 text-white font-light py-4 text-lg tracking-tight transition-all duration-300 hover:bg-white/20 backdrop-blur-sm"
                   >
-                    <span className="relative z-10">{project.cta}</span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent transform scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-500 origin-left"></div>
-                    <div className="absolute -inset-1 bg-gradient-to-r from-emerald-400 to-cyan-500 rounded blur opacity-0 group-hover/btn:opacity-75 transition duration-500"></div>
-                  </Button>
+                    {project.cta}
+                  </button>
 
                   {/* Background Effects */}
                   <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-lg"></div>
@@ -265,8 +251,8 @@ const ProjectsSection = ({ language }: ProjectsSectionProps) => {
       </div>
 
       {/* Section Transition Effect */}
-      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-gray-900 to-transparent"></div>
-      <div className="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-r from-transparent via-emerald-500 to-transparent animate-pulse"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-black to-transparent"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
     </section>
   );
 };

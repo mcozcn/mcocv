@@ -109,45 +109,22 @@ const AboutSection = ({ language }: AboutSectionProps) => {
   };
 
   return (
-    <section id="about" className="relative py-40 bg-gradient-to-br from-black via-gray-900 to-purple-900/30 overflow-hidden">
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-transparent via-cyan-500 to-transparent animate-pulse"></div>
-        <div className="cyber-grid opacity-20"></div>
-        
-        {/* Floating Geometric Shapes */}
-        {[...Array(12)].map((_, i) => (
-          <div
-            key={i}
-            className={`absolute w-16 h-16 border border-cyan-400/20 transform rotate-45 animate-float`}
-            style={{
-              left: `${5 + i * 8}%`,
-              top: `${10 + (i % 4) * 25}%`,
-              animationDelay: `${i * 0.4}s`,
-              transform: `translateY(${scrollY * 0.05 * (i + 1)}px) rotate(45deg)`
-            }}
-          ></div>
-        ))}
-        
-        {/* Dynamic Light Rays */}
-        <div className="absolute top-1/4 right-0 w-96 h-2 bg-gradient-to-l from-cyan-500/50 to-transparent transform -skew-y-12 animate-pulse"></div>
-        <div className="absolute bottom-1/4 left-0 w-96 h-2 bg-gradient-to-r from-purple-500/50 to-transparent transform skew-y-12 animate-pulse delay-500"></div>
+    <section id="about" className="relative py-40 bg-transparent overflow-hidden">
+      {/* Minimal Background Elements */}
+      <div className="absolute inset-0 z-10">
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 relative z-20">
         {/* Section Header with 3D Effect */}
         <div className="text-center mb-32 relative">
           <div className="inline-block mb-8 relative">
-            <h2 className="text-8xl md:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-white to-purple-400 tracking-tighter transform hover:scale-105 transition-transform duration-500">
+            <h2 className="text-8xl md:text-9xl font-extralight text-white tracking-tight">
               {content[language].title}
             </h2>
-            {/* 3D Shadow */}
-            <div className="absolute inset-0 text-8xl md:text-9xl font-black text-gray-800/30 transform translate-x-3 translate-y-3 -z-10">
-              {content[language].title}
-            </div>
-            <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-48 h-2 bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 animate-gradient-shift"></div>
+            <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-48 h-px bg-white/20"></div>
           </div>
-          <p className="text-3xl md:text-4xl font-light text-cyan-300 tracking-widest animate-fade-in delay-200">
+          <p className="text-3xl md:text-4xl font-extralight text-white/75 tracking-tight mt-8">
             {content[language].subtitle}
           </p>
         </div>
@@ -156,16 +133,13 @@ const AboutSection = ({ language }: AboutSectionProps) => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-32">
           {content[language].stats.map((stat, index) => (
             <div key={index} className="text-center group relative">
-              <div className="relative glass rounded-2xl p-8 transform hover:scale-110 hover:rotate-3 transition-all duration-500 border border-cyan-500/30">
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative rounded-2xl p-8 transform hover:scale-105 transition-all duration-500 border border-white/10 bg-white/5 backdrop-blur-sm">
                 <div className="relative z-10">
-                  <div className="text-5xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400 mb-4 animate-pulse-glow">
+                  <div className="text-5xl md:text-7xl font-extralight text-white mb-4">
                     {stat.number}
                   </div>
-                  <p className="text-gray-300 text-sm font-bold tracking-wider uppercase">{stat.label}</p>
+                  <p className="text-white/60 text-sm font-light tracking-tight uppercase">{stat.label}</p>
                 </div>
-                {/* Floating Elements */}
-                <div className="absolute -top-2 -right-2 w-4 h-4 bg-cyan-400 rounded-full animate-ping"></div>
               </div>
             </div>
           ))}
@@ -175,26 +149,24 @@ const AboutSection = ({ language }: AboutSectionProps) => {
         <div className="grid lg:grid-cols-2 gap-32 items-center mb-32">
           {/* Text Content with Advanced Typography */}
           <div className="space-y-10 relative">
-            <div className="space-y-8 text-gray-300">
-              <p className="text-xl leading-relaxed border-l-4 border-cyan-500 pl-8 transform hover:translate-x-4 transition-transform duration-500 hover:text-white">
+            <div className="space-y-8 text-white/75">
+              <p className="text-xl leading-relaxed border-l border-white/10 pl-8 font-light">
                 {content[language].description1}
               </p>
-              <p className="text-xl leading-relaxed border-l-4 border-purple-500 pl-8 transform hover:translate-x-4 transition-transform duration-500 delay-100 hover:text-white">
+              <p className="text-xl leading-relaxed border-l border-white/10 pl-8 font-light">
                 {content[language].description2}
               </p>
-              <p className="text-xl leading-relaxed border-l-4 border-pink-500 pl-8 transform hover:translate-x-4 transition-transform duration-500 delay-200 hover:text-white">
+              <p className="text-xl leading-relaxed border-l border-white/10 pl-8 font-light">
                 {content[language].description3}
               </p>
             </div>
             
-            <Button 
+            <button 
               onClick={() => scrollToSection('experience')}
-              className="group relative px-12 py-6 bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 text-white font-bold text-xl skew-x-[-15deg] transform hover:scale-110 hover:rotate-1 transition-all duration-500 shadow-2xl hover:shadow-cyan-500/50 overflow-hidden"
+              className="group relative px-12 py-6 border border-white/10 bg-white/10 text-white font-light text-xl tracking-tight transition-all duration-300 hover:bg-white/20 backdrop-blur-sm"
             >
-              <span className="skew-x-[15deg] block relative z-10">{content[language].cta}</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-              <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400 to-purple-500 rounded blur opacity-0 group-hover:opacity-75 transition duration-500"></div>
-            </Button>
+              {content[language].cta}
+            </button>
           </div>
           
           {/* Interactive Image Section */}
@@ -226,27 +198,19 @@ const AboutSection = ({ language }: AboutSectionProps) => {
         {/* Strengths Grid with Advanced Hover Effects */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {Object.entries(content[language].strengths).map(([key, strength], index) => (
-            <Card key={key} className={`relative glass border border-cyan-500/20 backdrop-blur-sm hover:border-cyan-500/50 transition-all duration-700 group cursor-pointer transform hover:scale-110 hover:-translate-y-4 hover:rotate-2 ${
+            <Card key={key} className={`relative border border-white/10 bg-white/5 backdrop-blur-sm hover:border-white/20 transition-all duration-300 group cursor-pointer transform hover:scale-105 ${
               index % 2 === 0 ? 'lg:-mt-12' : 'lg:mt-12'
             }`}>
               <CardContent className="p-10 text-center relative z-10">
-                <div className="text-5xl mb-6 transform group-hover:scale-150 group-hover:rotate-12 transition-all duration-700 filter group-hover:drop-shadow-lg">
+                <div className="text-5xl mb-6 transform group-hover:scale-110 transition-all duration-300">
                   {strength.icon}
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors duration-500">
+                <h3 className="text-2xl font-extralight text-white mb-4 transition-colors duration-300">
                   {strength.title}
                 </h3>
-                <p className="text-gray-400 leading-relaxed group-hover:text-gray-200 transition-colors duration-500">
+                <p className="text-white/60 leading-relaxed font-light transition-colors duration-300">
                   {strength.description}
                 </p>
-                
-                {/* Dynamic Background Effects */}
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-lg"></div>
-                <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-700"></div>
-                
-                {/* Floating Particles */}
-                <div className="absolute top-2 right-2 w-2 h-2 bg-cyan-400 rounded-full opacity-0 group-hover:opacity-100 animate-ping transition-opacity duration-500"></div>
-                <div className="absolute bottom-2 left-2 w-2 h-2 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 animate-ping transition-opacity duration-500 delay-200"></div>
               </CardContent>
             </Card>
           ))}
@@ -254,10 +218,10 @@ const AboutSection = ({ language }: AboutSectionProps) => {
       </div>
 
       {/* Section Transition Effect */}
-      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-gray-900 to-transparent"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-black to-transparent"></div>
       
-      {/* Animated Divider */}
-      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-cyan-500 to-transparent animate-pulse"></div>
+      {/* Minimal Divider */}
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
     </section>
   );
 };

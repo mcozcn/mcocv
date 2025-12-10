@@ -1,4 +1,3 @@
-
 interface FooterProps {
   language: 'tr' | 'en';
 }
@@ -37,12 +36,12 @@ const Footer = ({ language }: FooterProps) => {
   };
 
   return (
-    <footer className="bg-gray-900 text-white py-12">
-      <div className="container mx-auto px-4">
+    <footer className="relative bg-transparent text-white py-12 border-t border-white/10 overflow-hidden">
+      <div className="relative z-20 container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-8">
           <div>
-            <h3 className="text-2xl font-bold mb-4">MÜCAHİT ÖZCAN</h3>
-            <p className="text-gray-300 leading-relaxed">
+            <h3 className="text-2xl font-extralight mb-4 tracking-tight">MÜCAHİT ÖZCAN</h3>
+            <p className="text-white/75 leading-relaxed font-light">
               {language === 'tr' 
                 ? 'Dijital dönüşüm uzmanı olarak işletmelerin teknoloji ile büyümesine yardımcı oluyorum.'
                 : 'As a digital transformation expert, I help businesses grow with technology.'
@@ -51,7 +50,7 @@ const Footer = ({ language }: FooterProps) => {
           </div>
           
           <div>
-            <h4 className="text-lg font-semibold mb-4">
+            <h4 className="text-lg font-extralight mb-4 tracking-tight">
               {language === 'tr' ? 'Hızlı Erişim' : 'Quick Links'}
             </h4>
             <div className="grid grid-cols-2 gap-2">
@@ -59,7 +58,7 @@ const Footer = ({ language }: FooterProps) => {
                 <button
                   key={key}
                   onClick={() => scrollToSection(key)}
-                  className="text-left text-gray-300 hover:text-white transition-colors"
+                  className="text-left text-white/60 hover:text-white/80 transition-colors font-light tracking-tight"
                 >
                   {value}
                 </button>
@@ -68,8 +67,8 @@ const Footer = ({ language }: FooterProps) => {
           </div>
         </div>
         
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center">
-          <p className="text-gray-400">{content[language].copyright}</p>
+        <div className="border-t border-white/10 mt-8 pt-8 text-center">
+          <p className="text-white/60 font-light tracking-tight">{content[language].copyright}</p>
         </div>
       </div>
     </footer>
