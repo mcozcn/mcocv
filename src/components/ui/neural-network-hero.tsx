@@ -343,7 +343,7 @@ export default function NeuralNetworkHero({
           {description}
         </p>
 
-        <div ref={ctaRef} className="flex flex-wrap items-center gap-2 sm:gap-3 pt-2">
+        <div ref={ctaRef} className="flex flex-wrap items-center gap-2 sm:gap-3 pt-2 pb-4 lg:pb-0">
           {ctaButtons.map((button, index) => (
             <a
               key={index}

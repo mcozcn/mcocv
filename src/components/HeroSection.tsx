@@ -70,13 +70,13 @@ const HeroSection = ({ language, setLanguage }: HeroSectionProps) => {
 
       {/* Profile Image - Mobile: Below Content, Desktop: Right Side Overlay */}
       {/* Mobile Layout */}
-      <div className="lg:hidden relative z-10 mt-8 sm:mt-12">
+      <div className="lg:hidden relative z-10 mt-6">
         <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto flex flex-col items-center">
             <div className="relative group">
               {/* Profile Image Container */}
               <div className="relative">
-                <div className="relative w-48 h-48 sm:w-64 sm:h-64">
+                <div className="relative w-40 h-40 sm:w-52 sm:h-52">
                   <img 
                     src={heroImage}
                     alt="Mücahit Özcan"
@@ -89,8 +89,8 @@ const HeroSection = ({ language, setLanguage }: HeroSectionProps) => {
               </div>
 
               {/* Name Below Image - Minimal Style */}
-              <div className="relative group mt-4 sm:mt-6 text-center">
-                <div className="text-xl sm:text-2xl font-light tracking-tight text-white/90">
+              <div className="relative group mt-3 text-center">
+                <div className="text-lg sm:text-xl font-light tracking-tight text-white/90">
                   MÜCAHİT ÖZCAN
                 </div>
               </div>
