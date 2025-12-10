@@ -52,8 +52,6 @@ const HeroSection = ({ language, setLanguage }: HeroSectionProps) => {
       <NeuralNetworkHero
         title={`${content[language].title} ${content[language].subtitle}`}
         description={content[language].description}
-        badgeText={language === 'tr' ? 'Dijital Dönüşüm' : 'Digital Transformation'}
-        badgeLabel={language === 'tr' ? 'Yeni' : 'New'}
         ctaButtons={[
           { 
             text: content[language].cta, 
@@ -72,28 +70,30 @@ const HeroSection = ({ language, setLanguage }: HeroSectionProps) => {
 
       {/* Profile Image - Right Side Overlay (Minimal Style) */}
       <div className="absolute inset-0 pointer-events-none z-10">
-        <div className="container mx-auto px-4 h-full flex items-center">
-          <div className="w-full flex justify-end">
-            <div className="lg:w-1/2 flex justify-center lg:justify-end pointer-events-auto">
-              <div className="relative group">
-                {/* Profile Image Container */}
-                <div className="relative">
-                  <div className="relative w-64 h-64 md:w-80 md:h-80">
-                    <img 
-                      src={heroImage}
-                      alt="Mücahit Özcan"
-                      className="w-full h-full object-cover rounded-full relative z-10 transform transition-all duration-700 group-hover:scale-105 border border-white/10"
-                    />
-                    
-                    {/* Minimal glow effect */}
-                    <div className="absolute inset-0 rounded-full bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"></div>
+        <div className="container mx-auto px-4 h-full">
+          <div className="max-w-7xl mx-auto h-full flex items-start pt-36 sm:pt-44 md:px-10 lg:px-16">
+            <div className="w-full flex justify-end">
+              <div className="lg:w-1/2 flex justify-center lg:justify-end pointer-events-auto">
+                <div className="relative group">
+                  {/* Profile Image Container */}
+                  <div className="relative">
+                    <div className="relative w-80 h-80 md:w-96 md:h-96 lg:w-[500px] lg:h-[500px]">
+                      <img 
+                        src={heroImage}
+                        alt="Mücahit Özcan"
+                        className="w-full h-full object-cover rounded-full relative z-10 transform transition-all duration-700 group-hover:scale-105 border border-white/10"
+                      />
+                      
+                      {/* Minimal glow effect */}
+                      <div className="absolute inset-0 rounded-full bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"></div>
+                    </div>
                   </div>
-                </div>
 
-                {/* Name Below Image - Minimal Style */}
-                <div className="relative group mt-6 text-center">
-                  <div className="text-3xl md:text-4xl font-light tracking-tight text-white/90">
-                    MÜCAHİT ÖZCAN
+                  {/* Name Below Image - Minimal Style */}
+                  <div className="relative group mt-6 text-center">
+                    <div className="text-3xl md:text-4xl font-light tracking-tight text-white/90">
+                      MÜCAHİT ÖZCAN
+                    </div>
                   </div>
                 </div>
               </div>
