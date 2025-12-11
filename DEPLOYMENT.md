@@ -6,15 +6,9 @@ Bu proje GitHub Pages'e deploy edilmek için hazırlanmıştır.
 
 ### 1. GitHub'a Repository Oluşturma
 
-**Seçenek A: Lovable üzerinden (Önerilen)**
-1. Lovable editöründe sağ üstteki **GitHub** butonuna tıklayın
-2. GitHub hesabınızı bağlayın
-3. **Create Repository** butonuna tıklayarak yeni bir **public** repository oluşturun
-4. Kodlar otomatik olarak senkronize edilecek
-
-**Seçenek B: Manuel olarak**
+**Repo oluşturma (Manuel)**
 1. GitHub'da yeni bir public repository oluşturun
-2. Lovable projenizi klonlayın
+2. Yerelde projeyi klonlayın
 3. GitHub reposuna push edin
 
 ### 2. GitHub Pages Ayarlarını Yapma
@@ -171,7 +165,6 @@ base: '/repo-adı/'  // Subdirectory için
 Sitenizi güncellemek için:
 
 ```bash
-# Lovable'da değişiklik yapın VEYA yerel olarak:
 git add .
 git commit -m "Site güncelleme"
 git push
@@ -237,6 +230,4 @@ Farklı ortamlar için:
 ## 🆘 Destek
 
 Sorun yaşarsanız:
-- [Lovable Dokümantasyonu](https://docs.lovable.dev)
-- [Lovable Discord](https://discord.gg/lovable)
 - [GitHub Pages Sorun Giderme](https://docs.github.com/pages/getting-started-with-github-pages/troubleshooting-404-errors-for-github-pages-sites)
