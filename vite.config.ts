@@ -5,7 +5,8 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: '/mcocv/',
+  // Use root base path for custom domain deployments (e.g., mucahitozcan.com)
+  base: '/',
   server: {
     host: "::",
     port: 8080,
