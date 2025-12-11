@@ -4,8 +4,8 @@ import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  // Use root base path for custom domain deployments (e.g., mucahitozcan.com)
-  base: '/',
+  // For GitHub Pages use mode "github" -> base '/mcocv/', otherwise root '/'
+  base: mode === 'github' ? '/mcocv/' : '/',
   server: {
     host: "::",
     port: 8080,
