@@ -100,6 +100,12 @@ Proje GitHub Pages için hazırlanmıştır. Deploy etmek için:
 
 Detaylı bilgi için `DEPLOYMENT.md` dosyasına bakın.
 
+### Lovable ile Deployment
+
+1. [Lovable](https://lovable.dev) editöründe projeyi açın
+2. Sağ üstteki "Publish" butonuna tıklayın
+3. Siteniz otomatik olarak yayınlanacaktır
+
 ## 🎨 Özelleştirme
 
 ### Renkler ve Tema
@@ -150,4 +156,8 @@ Bu proje kişisel kullanım içindir.
 
 ## 🙏 Teşekkürler
 
-Bu proje React, TypeScript, Vite ve Tailwind ile geliştirilmiştir.
+Bu proje [Lovable](https://lovable.dev) platformu kullanılarak geliştirilmiştir.
+
+---
+
+**Lovable Proje URL'si**: https://lovable.dev/projects/3b0d08b2-feb2-4adb-8dbd-1a5839ba36ea
