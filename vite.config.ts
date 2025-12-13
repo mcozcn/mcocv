@@ -1,8 +1,14 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
+import path from "path";
 
-// Vite configuration for GitHub Pages deployment under /mcocv/
+// Vite configuration for Vercel deployment
 export default defineConfig({
   plugins: [react()],
-  base: "/mcocv/",
+  base: "/",
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
 });
