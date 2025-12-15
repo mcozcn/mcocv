@@ -5,10 +5,13 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:ssr": "node server/server.ts",
     "build": "vite build",
+    "build:ssr": "vite build && vite build --ssr server/entry-server.tsx --outDir dist/server",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "preview:ssr": "NODE_ENV=production node server/server.ts"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
@@ -65,11 +68,13 @@
     "tailwindcss-animate": "^1.0.7",
     "three": "^0.182.0",
     "vaul": "^0.9.3",
-    "zod": "^3.23.8"
+    "zod": "^3.23.8",
+    "express": "^4.18.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
     "@tailwindcss/typography": "^0.5.15",
+    "@types/express": "^4.17.21",
     "@types/node": "^22.5.5",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",

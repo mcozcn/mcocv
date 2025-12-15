@@ -2,7 +2,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 
-// Vite configuration for Vercel deployment
+// Vite configuration with SSR support
 export default defineConfig({
   plugins: [react()],
   base: "/",
@@ -10,5 +10,8 @@ export default defineConfig({
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
+  },
+  ssr: {
+    noExternal: ['@tanstack/react-query'],
   },
 });
