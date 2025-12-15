@@ -62,22 +62,34 @@ const createServer = async () => {
         template = fs.readFileSync(resolve('../dist/client/index.html'), 'utf-8');
       }
 
-      // Replace meta tags in template
-      const headStart = template.indexOf('<head>');
-      const headEnd = template.indexOf('</head>');
-      
-      if (headStart !== -1 && headEnd !== -1) {
-        const beforeHead = template.substring(0, headStart + 6);
-        const afterHead = template.substring(headEnd);
-        
-        template = `${beforeHead}
+      // Replace only the existing SEO block so we don't drop styles/scripts in <head>
+      const seoStart = template.indexOf('<!-- Primary Meta Tags -->');
+      const jsonLdMarker = template.indexOf('<!-- Structured Data (JSON-LD) -->');
+      const jsonLdEnd = jsonLdMarker !== -1 ? template.indexOf('</script>', jsonLdMarker) : -1;
+
+      if (seoStart !== -1 && jsonLdEnd !== -1) {
+        const afterJsonLd = template.substring(jsonLdEnd + '</script>'.length);
+        template = `${template.substring(0, seoStart)}
+    <!-- Primary Meta Tags -->
+    ${metaTagsHtml}
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+${jsonLd}
+    </script>${afterJsonLd}`;
+      } else {
+        // Fallback: inject before closing head if markers are missing
+        const headClose = template.indexOf('</head>');
+        if (headClose !== -1) {
+          template = `${template.substring(0, headClose)}
     ${metaTagsHtml}
     
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
 ${jsonLd}
     </script>
-${afterHead}`;
+${template.substring(headClose)}`;
+        }
       }
 
       // Inject rendered app HTML and SEO content
@@ -105,4 +117,3 @@ createServer().then(app => {
     console.log(`Server running at http://localhost:${port}`);
   });
 });
-

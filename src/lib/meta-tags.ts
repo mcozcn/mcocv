@@ -28,7 +28,7 @@ export const generateMetaTags = (seoContent: SEOContent, lang: Language): MetaTa
     title: seoContent.title,
     description: seoContent.description,
     keywords: seoContent.keywords,
-    canonical: baseUrl,
+    canonical: url,
     ogTitle: seoContent.title.split('|')[0].trim(),
     ogDescription: seoContent.description,
     ogImage: imageUrl,
@@ -53,6 +53,7 @@ export const renderMetaTags = (meta: MetaTags): string => {
     <meta name="description" content="${escapeHtml(meta.description)}" />
     <meta name="keywords" content="${escapeHtml(meta.keywords)}" />
     <meta name="author" content="Mücahit Özcan" />
+    <meta name="google-site-verification" content="7GbsjSzTQnnqqt_R5Px_JqMe9gnKCRNpuiOD9wpqZ3s" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="theme-color" content="#000000" />
     <meta name="format-detection" content="telephone=no" />
@@ -89,6 +90,8 @@ export const renderMetaTags = (meta: MetaTags): string => {
 };
 
 export const generateJSONLD = (lang: Language): string => {
+  const pageUrl = lang === 'en' ? `${baseUrl}?lang=en` : baseUrl;
+
   const baseSchema = {
     '@context': 'https://schema.org',
     '@type': 'Person',
@@ -97,7 +100,7 @@ export const generateJSONLD = (lang: Language): string => {
     description: lang === 'en' 
       ? 'Digital transformation and strategy expert with 13+ years of experience repositioning businesses in the digital age'
       : '13+ yıllık deneyimle işletmeleri dijital çağda yeniden konumlandıran dijital dönüşüm ve strateji uzmanı',
-    url: 'https://mucahitozcan.com',
+    url: pageUrl,
     image: imageUrl,
     sameAs: [
       'https://www.linkedin.com/in/mucahitozcan',
@@ -116,7 +119,7 @@ export const generateJSONLD = (lang: Language): string => {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'Mücahit Özcan',
-    url: 'https://mucahitozcan.com',
+    url: pageUrl,
     description: lang === 'en'
       ? "Digital transformation and strategy expert Mücahit Özcan's personal website"
       : "Dijital dönüşüm ve strateji uzmanı Mücahit Özcan'ın kişisel web sitesi",
@@ -136,7 +139,7 @@ export const generateJSONLD = (lang: Language): string => {
     description: lang === 'en'
       ? 'Digital transformation, e-commerce and strategic consulting services'
       : 'Dijital dönüşüm, e-ticaret ve stratejik danışmanlık hizmetleri',
-    url: 'https://mucahitozcan.com',
+    url: pageUrl,
     serviceType: lang === 'en'
       ? ['Digital Transformation', 'E-Commerce Consulting', 'Digital Strategy', 'Digital Marketing']
       : ['Dijital Dönüşüm', 'E-Ticaret Danışmanlığı', 'Dijital Strateji', 'Dijital Pazarlama'],
@@ -165,4 +168,3 @@ function escapeHtml(text: string): string {
   };
   return text.replace(/[&<>"']/g, m => map[m]);
 }
-
