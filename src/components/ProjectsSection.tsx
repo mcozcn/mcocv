@@ -30,7 +30,7 @@ const ProjectsSection = ({ language }: ProjectsSectionProps) => {
         {
           name: 'Core – Spor Salonu Yönetimi',
           year: '2024–2025',
-          description: 'Spor Salonları için üye takibi, ödeme ve antreman grup programları yönetimi sunan sistem.',
+          description: 'Spor Salonları için üye takibi, ödeme ve antrenman grup programları yönetimi sunan sistem.',
           result: 'Üye ve Ödeme Takip sistemi ile verimlilik %50 artış',
           cta: 'Uygulamayı İncele',
           image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&h=300&fit=crop',
